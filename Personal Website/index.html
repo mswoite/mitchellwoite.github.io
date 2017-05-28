@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Mitchell Woite</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <h1 class="loading">Loading...</h1>
+        
+        <div class="loading-screen"></div>
+        
+        <nav class="navbar">
+            <h1>Navigation Bar</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#classes">Coursework</a></li>
+            </ul>
+        </nav>
+
+        <article id="home">
+            <header>
+                <h1>Mitchell Woite</h1>
+                <h2>Your next Junior Front-End Developer</h2>
+            </header>
+        </article>
+        
+        <div class="content">
+            
+            <aside>
+                <ul>
+                    <li>
+                        <a class="facebook" href="https://www.facebook.com/mitch.woite" target="_blank">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="twitter" href="https://twitter.com/MitchWoite" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="instagram" href="https://www.instagram.com/mitchwoite/" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            
+            <section id="about">
+               <article class="aboutcontainer">
+                   <h1>About Mitchell</h1>
+                <figure>
+                    <img src="images/mitch.jpg" alt="mitchellwoite">
+                </figure>
+                <article class="abouttwo">
+                    <p>Mitchell Woite is an aspiring front-end developer born and raised in Buffalo, New York. He is about to graduate from Syracuse Univeristy and learned a bunch of really cool stuff (like how to make this website) in one of the nation's best Information Studies schools. Outside of web development, Mitchell's interests include Buffalo Sports, craft beer, and discovering new music.</p>
+                    <p>Mitchell has experience as a freelance web developer working with clients to deliver a product that best suits their needs. In fact, the President of the Clarence Historical Museum liked the website Mitchell made so much that he hired him to make the website for his law firm.</p>
+                </article>
+                </article>
+            </section>
+            
+        </div>
+            <section id="skills">
+                <article class="skillscontainer">
+                    <h1>Skills</h1>
+                    <article>
+                        <a class="codeicon">
+                        <i class="fa fa-code fa-4x" aria-hidden="true"></i>
+                        </a>
+                        <p>Front-End Development</p>
+                    </article>
+                    <article>
+                        <a class="html5icon">
+                        <i class="fa fa-html5 fa-4x" aria-hidden="true"></i>
+                        </a>
+                        <p>HTML5</p>
+                    </article>
+                     <article>
+                        <a class="cssicon">
+                            <i class="fa fa-css3 fa-4x" aria-hidden="true"></i>
+                        </a>
+                        <p>CSS3</p>
+                    </article>
+                    <article>
+                        <a class="mobileicon">
+                            <i class="fa fa-mobile fa-4x" aria-hidden="true"></i>
+                        </a>
+                        <p>Responsive Design</p>
+                    </article>
+                </article>
+            </section>
+            
+            <section id="classes">
+                <div class="classescontainer">
+                    <h1>Coursework</h1>
+                    <article>
+                        <h1>Intro to Web Development</h1>
+                        <p>This course taught the basics of web development. Most of the work was done in HTML 4 / CSS 2 as Mitchell created basic websites to learn an understanding of front-end development. This course also gave an introduction on hand-coding websites based on wireframes.</p>
+                    </article>
+                    <article>
+                        <h1>Advanced Web Development</h1>
+                        <p>The websites developed in this course were made using HTML 5 / CSS 3. Advanced areas were covered such as making responsive designs, using CSS animations, using frameworks, writing JavaScript, following w3 accesibility standards, and basic uses of PHP, JSON, and APIs.</p>
+                    </article>
+                    <article>
+                        <h1>Digital Strategy and Analytics</h1>
+                        <p>This course provided insight into the strategic and analytical side of web development. He was taught how to optimize a website's SEO, navigate Google Analytics, make landing pages, understand PPC advertising, and have effective email marketing strategies.</p>
+                    </article>
+                    <article>
+                        <h1>Capstone / Professional Ethics</h1>
+                        <p>For his capstone, Mitchell is working with refugee empowerment organization Syracuse RISE to improve their website and help with their social media. The changes to their website include adding more interactivity and removing dead-links and outdated information. This class also taught Mitchell of the ACM Code of Ethics for IT professionals.</p>
+                    </article>
+                </div>
+            </section>
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        
+        <script>
+            $(".navbar a").click(function(){
+                $(".navbar a").removeClass("navOn");
+                $(this).addClass("navOn");
+                goTo = $(this).attr("href");
+                $("body, html").animate({scrollTop: $(goTo).offset().top},1000);
+            });
+            
+        </script>
+       
+    </body>
+</html>

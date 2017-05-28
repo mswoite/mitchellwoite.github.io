@@ -1,0 +1,765 @@
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Amatica+SC');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html , body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+}
+
+body{
+    /*font shit*/
+}
+
+.loading{
+    animation: move-loading 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #222;
+    font-size: 4em;
+    font-family: 'Amatica SC', cursive;
+}
+
+.loading:before{
+    animation: slide-right 2.5s;
+    animation-fill-mode: forwards;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,255,255,.75);
+}
+
+@keyframes slide-right{
+    from {transform:translateX(0); }
+    to {transform:translateX(100%);}
+}
+
+@keyframes move-loading{
+    to {z-index: -99;
+    }
+}
+
+.loading-screen{
+    animation: loading-screen 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform-origin: bottom center;
+}
+
+@keyframes loading-screen{
+    to {transform: scaleY(0);}
+}
+
+.navbar{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #888;
+}
+
+.navbar > h1{
+    position: absolute;
+    left: -999999px;
+}
+
+.navbar > ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar > ul > li{
+    padding: 10px;
+    margin: 0px 15px;
+    background-color: #fff;
+}
+
+.navbar > ul > li > a{
+    color: #222;
+    font-family: 'Amatic SC', cursive;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.navbar > ul > li > a:hover{
+    border-bottom: #222 solid 1px;
+}
+
+.navOn{
+    border-top: #222 solid 1px;
+    border-bottom: #222 solid 1px;
+}
+
+#home{
+    height: 100vh;
+}
+
+article header{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: url(../images/computer.jpg);
+    background-size: cover;
+    text-align: center;
+    border-bottom: #222 solid 1px;
+}
+
+article header h1{
+    font-family: 'Amatica SC', cursive;
+    font-size: 3.5em;
+    max-width: 1200px;
+    margin: 0% 0%;
+    color: #222;
+    text-shadow: 1px 1px 5px #fff;
+}
+
+article header h2{
+    font-family: 'Amatica SC', cursive;
+    font-size: 3em;
+    max-width: 1200px;
+    margin: 0% 0% 25% 0%;
+    color: #222;
+    text-shadow: 2px 2px 5px #fff;
+}
+
+.content{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 0;
+    position: relative;
+}
+
+.content > aside{
+    position: absolute;
+    right: 0;
+    top: 200px;
+    transform: translateX(100%);
+}
+
+.content > aside ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content > aside ul li{
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.content > aside ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px 0;
+    line-height: 40px;
+    text-align: center;
+}
+
+.content > aside .facebook{
+    background-color: #2D609B;
+}
+
+.content > aside .facebook:hover{
+    background-color: white;
+    color: #2D609B;
+}
+
+.content > aside .twitter{
+    background-color: #00C3F3;
+}
+
+.content > aside .twitter:hover{
+    background-color: white;
+    color: #00C3F3;
+}
+
+.content > aside .instagram{
+    background-color: #8a3ab9;
+}
+
+.content > aside .instagram:hover{
+    background-color: white;
+    color: #8a3ab9;
+}
+
+#about{
+    height: 100vh;
+    background-color: #eee;
+}
+
+.aboutcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;   
+}
+
+.aboutcontainer > h1{
+    font-family: 'Amatica SC', cursive;
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #222;
+}
+
+.aboutcontainer > figure{
+    flex-grow: 1;
+    box-shadow: 2px 2px 10px #111;
+    margin: 15vh 10px 0px 10px;
+    background-color: white;
+    min-height: 70vh;
+    flex: 0 0 auto;
+}
+
+.aboutcontainer > figure img{
+    align-self: center;
+    height: 70vh;
+}
+
+.abouttwo{
+    margin: 15vh 20px 0px 10px;
+    min-height: 70vh;
+    max-width: 65vw;
+}
+
+.abouttwo > p{
+    font-family: 'Amatica SC', cursive;
+    font-size: 1.6em;
+    padding: 0px 20px;
+    margin: 15px 0px;
+    color: #222;
+}
+
+
+.abouttwo > p:first-of-type:first-letter{
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    margin: 0 10px 10px 0;
+    background-color: #222;
+    color:#eee;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+#skills{
+    height: 60vh;
+}
+
+.skillscontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #222;
+}
+
+.skillscontainer > h1{
+    font-family: 'Amatica SC', cursive;
+    font-size: 2.5em;
+    margin: 0 100px 0 0;
+    padding: 0;
+    text-align: center;
+    color: #eee;
+}
+
+.skillscontainer > article{
+    flex-grow: 1;
+    margin: 20vh 10px 0px 10px;
+    min-height: 40vh;
+    flex: 0 0 auto;
+    justify-content: center;
+    min-width: 15vw;
+    text-align: center;
+}
+
+.skillscontainer > article > p{
+    font-family: 'Amatica SC', cursive;
+    font-size: 1.5em;
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-align: center;
+    color: #eee;
+}
+
+.codeicon{
+    color: dodgerblue;
+}
+
+.html5icon{
+   color: orangered;
+}
+
+.cssicon{
+    color: cornflowerblue;
+}
+
+.mobileicon{
+    color: #eee;
+}
+
+
+#classes{
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 0;
+    position: relative;
+}
+
+.classescontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.classescontainer > h1{
+    font-family: 'Amatica SC', cursive;
+    font-size: 2.5em;
+    margin: 20px 0 20px 0;
+    padding: 0;
+    text-align: center;
+    color: #222;
+}
+
+.classescontainer > article{
+    flex-grow: 1;
+    margin: 0;
+    min-height: 30vh;
+    max-width: 75vw;
+    text-align: center;
+}
+
+.classescontainer > article  h1{
+    font-family: 'Amatica SC', cursive;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #222;
+}
+
+.classescontainer > article p{
+    font-family: 'Amatica SC', cursive;
+    font-size: 1.3em;
+    padding: 0px 20px;
+    margin: 15px 0px;
+    color: #222;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/*custom*/
+
+@media only screen and (max-width:750px){
+    #about{
+        min-height: 120vh;
+    }
+    .aboutcontainer{
+        flex-direction: column;
+    }   
+    
+    .aboutcontainer > figure{
+        margin: 5vh 0 0 0;
+    }
+    
+    .abouttwo{
+        min-height: 30vh;
+        min-width: 80vh;
+        margin: 5vh 20px 0px 10px;
+    }
+    .abouttwo > p{
+        font-size: 1.4em;
+    }
+    
+    
+    .skillscontainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skillscontainer > h1{
+        margin: 10vh 0 0 0;
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .skillscontainer > article{
+        margin: 10px 0;
+        min-height: 10vh;
+    }
+    
+   .skillscontainer > article > p{
+        margin: 0;
+        font-size: 1.1em;
+    }
+    
+        .codeicon{
+    font-size: 12px;
+    }
+
+    .html5icon{
+    font-size: 12px;
+    }
+
+    .cssicon{
+    font-size: 12px;
+    }
+
+    .mobileicon{
+    font-size: 12px;
+    }
+    
+     .classescontainer > h1{
+        margin: 15vh 0 20px 0;
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 950px){
+    
+    #about{
+        height: 75vh;
+    }
+    
+    .aboutcontainer > figure{
+    min-height: 50vh;
+    }
+
+    .aboutcontainer > figure img{
+    align-self: center;
+    height: 50vh;
+    }
+    
+    .abouttwo{
+        min-height: 30vh;
+    }
+    .abouttwo > p{
+        font-size: 1.1em;
+        margin-top: 0;
+    }
+    
+    
+    .classescontainer > article p{
+        font-size: 1em;
+    }
+    
+     #classes{
+        min-height: 100vh;
+    }
+    
+   
+    
+    .classescontainer{
+        flex-direction: column;
+    }
+    
+    .classescontainer > article{
+        margin: 0;
+        min-height: 30vh;
+        min-width: 80vh; 
+    }
+
+}
+
+@media only screen and (max-width: 1180px){
+    .content > aside{
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
